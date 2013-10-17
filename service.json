@@ -22,12 +22,6 @@
             "uri": "/api/myself/",
             "summary": "Return the information of the currently logged in user",
             "responseClass": "MyselfOutput"
-        },
-        "Escrows": {
-            "httpMethod": "GET",
-            "uri": "/api/escrows/",
-            "summary": "Produces a list of releasable escrows for the logged in user",
-            "responseClass": "EscrowOutput"
         }
     },
     "models": {
@@ -42,80 +36,6 @@
                     "type": "object"
                 }
             }
-        },
-        "Escrow": {
-            "type": "object",
-            "properties": {
-                "currency": {
-                    "location": "json",
-                    "type": "string"
-                },
-                "amount": {
-                    "location": "json",
-                    "type": "numeric"
-                },
-                "exchange_rate_updated_at": {
-                    "location": "json",
-                    "type": "string"
-                },
-                "amount_btc": {
-                    "location": "json",
-                    "type": "numeric"
-                },
-                "reference_code": {
-                    "location": "json",
-                    "type": "string"
-                },
-                "created_at": {
-                    "location": "json",
-                    "type": "string"
-                },
-                "escrow_id": {
-                    "location": "json",
-                    "type": "integer"
-                },
-                "buyer_username": {
-                    "location": "json",
-                    "type": "string"
-                }
-            }
-        },
-        "EscrowOutput": {
-            "type": "object",
-            "properties": {
-                "data": {
-                    "location": "json",
-                    "type": "object", 
-                    "properties": {
-                        "escrow_list": {
-                            "type": "object",
-                            "location": "json",
-                            "properties": {
-                                "data": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "Escrow"
-                                    }
-                                }
-                            }
-                        },
-                        "escrow_count": {
-                            "type": "integer",
-                            "location": "json"
-                        }
-                    }
-                },
-                "actions": {
-                    "location": "json",
-                    "type": "object",
-                    "properties": {
-                        "release_url": {
-                            "type": "string",
-                            "location": "json"
-                        }
-                    }
-                }
-            }
-        }     
+        }
     }
 }
